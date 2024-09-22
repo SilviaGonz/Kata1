@@ -7,22 +7,22 @@ public class Person {
     public final String name;
     public final LocalDate birthDate;
 
-    public Person(LocalDate birthDate, String name) {
-        this.birthDate = birthDate;
+    public Person(String name, LocalDate birthDate) {
         this.name = name;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
+        this.birthDate = birthDate;
     }
 
     public String getName() {
         return name;
     }
 
-   public int getAge() {
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public int getAge() {
         return toDays(LocalDate.now().toEpochDay() - birthDate.toEpochDay());
-   }
+    }
 
     private int toDays(long days) {
         return (int) (days / daysPerPerson);
@@ -31,9 +31,9 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "birthDate=" + birthDate +
-                "age =" + getAge() +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", birthDate=" + birthDate +
+                ", age=" + getAge() +
                 '}';
     }
 }
