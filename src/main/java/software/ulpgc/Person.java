@@ -3,7 +3,7 @@ package software.ulpgc;
 import java.time.LocalDate;
 
 public class Person {
-    public static final int daysPerPerson = 365;
+    public static final int daysPerPerson = 356;
     public final String name;
     public final LocalDate birthDate;
 
